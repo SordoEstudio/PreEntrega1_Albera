@@ -3,20 +3,19 @@ import {BrowserRouter,Routes, Route} from 'react-router-dom'
 
 import NavBarComponent from '../components/NavBarComponent/NavBarComponent'
 import Home from '../pages/Home'
+import ItemDetailContainer from '../pages/ItemDetailContainer'
 import Category from '../pages/Category'
-import Item from '../pages/Item'
 
-const MainRouter = () => {
+export const MainRouter = () => {
   return (
   <BrowserRouter>
         <NavBarComponent />
     <Routes>
       <Route path='/' element={<Home/>}/>
-      <Route path='/category/:categoryId' element={<Category/>}/>
-      <Route path='/item/:id' element={<Item/>}/>
+      <Route path="/item/:productId" element={<ItemDetailContainer />} />
+      <Route path="/category/:categoryId" element={<Category />} />
     </Routes>
   </BrowserRouter>
   )
 }
 
-export default MainRouter
